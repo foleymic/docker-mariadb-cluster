@@ -47,7 +47,7 @@ If there is just one service task running within the cluster, this instance auto
 	--network mydbnet \
 	--replicas=1 \
 	--env DB_SERVICE_NAME=dbcluster \
-	toughiq/mariadb-cluster
+	foleymic/mariadb-cluster-rpi:latest
 
 Note: the service name provided by `--name` has to match the environment variable __DB_SERVICE_NAME__ set with `--env DB_SERVICE_NAME`.
 	
@@ -62,7 +62,7 @@ Example:
 	--env MYSQL_DATABASE=mydb \
 	--env MYSQL_USER=mydbuser \
 	--env MYSQL_PASSWORD=mydbpass \
-	toughiq/mariadb-cluster
+	foleymic/mariadb-cluster-rpi:latest
 
 ### Scale out additional cluster members
 Just after the first service instance/task is running with we are good to scale out.
