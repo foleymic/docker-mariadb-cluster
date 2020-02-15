@@ -62,7 +62,6 @@ Example:
 	--env MYSQL_DATABASE=mydb \
 	--env MYSQL_USER=mydbuser \
 	--env MYSQL_PASSWORD=mydbpass \
-	--entrypoint 
 	foleymic/mariadb-cluster-rpi:latest
 
 ### Scale out additional cluster members
