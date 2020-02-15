@@ -27,6 +27,7 @@ ENV GALERA_USER=galera \
     CLUSTER_NAME=docker_cluster \
     MYSQL_ALLOW_EMPTY_PASSWORD=1
 
+RUN chmod +x /usr/local/bin/docker-entrypoint.sh
 
 ENTRYPOINT ["/usr/local/bin/docker-entrypoint.sh"]
 
