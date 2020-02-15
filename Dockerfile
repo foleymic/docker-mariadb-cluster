@@ -5,6 +5,7 @@ RUN apt-get update && apt-get upgrade -y \
     && rm -rf /var/lib/apt/lists/*
     
 COPY scripts/ /docker-entrypoint-initdb.d/.
+COPY docker-entrypoint.sh  /usr/local/bin/
 
 # we need to touch and chown config files, since we cant write as mysql user
 RUN touch /etc/mysql/conf.d/galera.cnf \
@@ -25,6 +26,9 @@ ENV GALERA_USER=galera \
     MAXSCALE_PASS=maxscalepass \ 
     CLUSTER_NAME=docker_cluster \
     MYSQL_ALLOW_EMPTY_PASSWORD=1
-    
+
+RUN ln -s usr/local/bin/docker-entrypoint.sh / # backwards compat
+ENTRYPOINT ["docker-entrypoint.sh"]
+
 CMD ["mysqld"]
 
